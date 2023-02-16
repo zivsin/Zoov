@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Zoov-menu</title>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <link rel="stylesheet" href="ARlinks.css">
+
+    <style> body {padding: 0; margin: 0; justify-content: center; align-items: center; display: flex;} canvas {vertical-align: top;} </style>
+  </head>
+  <body>
+
+    <!-- <script>
+      window.history.pushState('zoov', '', '/misleadingURL/menu');
+    </script> -->
+
+    <script>
+      function restart() {
+        document.getElementById('restart').innerText = 'Then Restart la!! ^_^';
+        setTimeout(function() {window.location.href = '../index.html'}, 1500);
+      }
+      function list(k) {
+        var links = ['perfume', 'pop', 'walk', 'car', 'head'];
+        var pw = ['911', '498733', '1162', '24996', '413'];
+        var id = ['list1', 'list2', 'list3', 'list4', 'list5'];
+        var linkingURL = 'https://www.8thwall.com/zoov/zoov-' + links[k];
+
+        document.getElementById(id[k]).innerText = 'PW: ' + pw[k];
+        setTimeout(function() {window.parent.location.replace(linkingURL);}, 1500);
+        for (var i = 0; i < 5; i++) {
+          if (i != k) {
+            document.getElementById(id[i]).disabled = true;
+          }
+        }
+      }
+
+    </script>
+
+    <table class="button-table">
+      <tr><td><button class="button-single" role="button" id="list1" onclick="list(0);">Perfume n Box</button></td></tr><tr><td></td></tr><tr><td></td></tr>
+      <tr><td><button class="button-single" role="button" id="list2" onclick="list(1);">All Over The Place</button></td></tr><tr><td></td></tr><tr><td></td></tr>
+      <tr><td><button class="button-single" role="button" id="list3" onclick="list(2);">Walking Around</button></td></tr><tr><td></td></tr><tr><td></td></tr>
+      <tr><td><button class="button-single" role="button" id="list4" onclick="list(3);">Just A Car</button></td></tr><tr><td></td></tr><tr><td></td></tr>
+      <tr><td><button class="button-single" role="button" id="list5" onclick="list(4);">Butt n Head</button></td></tr><tr><td></td></tr><tr><td></td></tr>
+      <tr><td><button class="button-single" role="button" id="restart" onclick="restart();">I Can't Decide... T_T</button></td></tr>
+    </table>
+
+  </body>
+</html>
